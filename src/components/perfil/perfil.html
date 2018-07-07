@@ -1,0 +1,92 @@
+<ion-fab bottom right>
+  <button ion-fab (click)="toggleEdit()">
+    <ion-icon md *ngIf="!editing" name="create">
+    </ion-icon>
+    <ion-icon md *ngIf="editing" name="cloud-done">
+      </ion-icon>
+  </button>
+</ion-fab>
+<ion-item-group *ngIf="!isLoading">
+  <ion-item-divider color="light">Básico</ion-item-divider>
+  <ion-item>
+    <ion-label fixed>Nombre</ion-label>
+    <ion-input [readonly]="!editing" type="text" value="" [(ngModel)]="perfil.first_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Apellido</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.last_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Nacionalidad</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.nacionality"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>RUT</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.number_identification"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Fecha de nacimiento</ion-label>
+    <ion-input *ngIf="!editing" [readonly]="!editing" type="text" [(ngModel)]="perfil.birthdate"></ion-input>
+    <ion-datetime *ngIf="editing" displayFormat="DD/MM/YYYY" [(ngModel)]="perfil.birthdate"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Sexo</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.sex"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Profesión o actividad</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.activity"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Profesión o actividad</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.activity"></ion-input>
+  </ion-item>
+</ion-item-group>
+
+<ion-item-group *ngIf="!isLoading">
+  <ion-item-divider color="light">Ubicación</ion-item-divider>
+  <ion-item>
+    <ion-label fixed>Región</ion-label>
+    <ion-input [readonly]="!editing" type="text" value="" [(ngModel)]="perfil.region"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Comuna</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.commune"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Calle</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.street"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Número</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Tipo de residencia</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.type_housing"></ion-input>
+  </ion-item>
+</ion-item-group>
+
+<ion-item-group *ngIf="!isLoading">
+  <ion-item-divider color="light">Contacto</ion-item-divider>
+  <ion-item>
+    <ion-label fixed>Télefono</ion-label>
+    <ion-input [readonly]="!editing" type="text" value="" [(ngModel)]="perfil.telephone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Email</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Télefono de emergencia</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.telephone_emergency"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Número</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Tipo de residencia</ion-label>
+    <ion-input [readonly]="!editing" type="text" [(ngModel)]="perfil.type_housing"></ion-input>
+  </ion-item>
+</ion-item-group>

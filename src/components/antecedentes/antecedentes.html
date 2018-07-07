@@ -1,0 +1,42 @@
+  
+  <ion-item-group *ngIf="!isLoading">
+    <ion-item-divider color="light">Antecedentes</ion-item-divider>
+    <ion-item>
+      <ion-label fixed>Obesidad</ion-label>
+      <ion-textarea type="text" value="" [(ngModel)]="perfil.morbid_background"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Historial ginecologico</ion-label>
+      <ion-textarea type="text" value="" [(ngModel)]="perfil.gyneco_obstetric_history"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Cirugias</ion-label>
+      <ion-textarea type="text" value="" [(ngModel)]="perfil.surgeries"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Habitos</ion-label>
+      <ion-textarea type="text" value="" [(ngModel)]="perfil.habits"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Medicamentos usados con regularidad</ion-label>
+      <ion-textarea type="text" value="" [(ngModel)]="perfil.commonly_used_medications"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Alergias</ion-label>
+      <ion-textarea type="text" value="" [(ngModel)]="perfil.allergies"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Historial familiar</ion-label>
+      <ion-textarea type="text" value="" [(ngModel)]="perfil.family_background"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Historial personal?</ion-label>
+      <ion-textarea type="text" value="" [(ngModel)]="perfil.social_personal_background"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Inmunizaciones</ion-label>
+      <ion-textarea type="text" value="" [(ngModel)]="perfil.immunizations"></ion-textarea>
+    </ion-item>
+  
+  </ion-item-group>
+  
