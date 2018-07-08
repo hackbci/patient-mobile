@@ -30,6 +30,10 @@
           </ion-col>
         </ion-row>
     </ion-item>
+    <ion-item>
+        <ion-label>Diagnostico</ion-label>
+        <ion-textarea [readonly]="true" [(ngModel)]="consulta.diagnosis"></ion-textarea>
+      </ion-item>
   <ion-item>
       <label>Enfermedad:</label>
       <ion-row>
@@ -37,7 +41,6 @@
             <ion-badge *ngFor="let pat of consulta.patology" item-end>{{pat}}</ion-badge>
         </ion-col>
       </ion-row>
-      
     </ion-item>
 
     <ion-item-group *ngIf="!isLoading">
