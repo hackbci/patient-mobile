@@ -21,6 +21,10 @@ import { HistorialPage } from '../pages/historial/historial';
 import { AntecedentesPageModule } from '../pages/antecedentes/antecedentes.module';
 import { HistorialPageModule } from '../pages/historial/historial.module';
 import { HistorialDetailPageModule } from '../pages/historial-detail/historial-detail.module';
+import { NotificationsProvider } from '../providers/notifications/notifications';
+import { NotificationsPageModule } from '../pages/notifications/notifications.module';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -37,7 +41,8 @@ import { HistorialDetailPageModule } from '../pages/historial-detail/historial-d
     HttpClientModule,
     AntecedentesPageModule,
     HistorialPageModule,
-    HistorialDetailPageModule
+    HistorialDetailPageModule,
+    NotificationsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -53,7 +58,8 @@ import { HistorialDetailPageModule } from '../pages/historial-detail/historial-d
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PatientProvider,
     LoadingProvider,
-    ConsultProvider
+    ConsultProvider,
+    NotificationsProvider
   ]
 })
 export class AppModule {}

@@ -38,8 +38,9 @@ export class HistorialListComponent {
     }, error => console.error(error));
   }
 
-  verDetalle(consulta) {
-    this.navCtrl.push(HistorialDetailPage, {consulta: consulta})
+  verDetalle(consulta, caso, specialty) {
+    console.log(consulta, caso, specialty);
+    this.navCtrl.push(HistorialDetailPage, {consulta: consulta, caso: caso, specialty: specialty})
   }
 
 }

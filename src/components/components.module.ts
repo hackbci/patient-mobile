@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { AntecedentesComponent } from './antecedentes/antecedentes';
 import { HistorialListComponent } from './historial-list/historial-list';
+import { NotificationsListComponent } from './notifications-list/notifications-list';
 @NgModule({
 	declarations: [
 		PerfilComponent,
 		AntecedentesComponent,
-    HistorialListComponent
+    HistorialListComponent,
+    NotificationsListComponent
 	],
 	imports: [
 		IonicModule,
@@ -19,7 +21,8 @@ import { HistorialListComponent } from './historial-list/historial-list';
 	exports: [
 		PerfilComponent,
 		AntecedentesComponent,
-    HistorialListComponent
+    HistorialListComponent,
+    NotificationsListComponent
 	]
 })
 export class ComponentsModule { }

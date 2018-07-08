@@ -15,8 +15,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HistorialDetailPage {
 consulta: any;
+specialty: any;
+caso: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.consulta = this.navParams.get('consulta');
+    this.caso = this.navParams.get('caso');
+    this.specialty = this.navParams.get('specialty');
   }
 
   ionViewDidLoad() {

@@ -1,0 +1,25 @@
+<ion-item-group *ngIf="!isLoading">
+  <ion-item-divider color="light">Pendientes</ion-item-divider>
+  <ion-item *ngFor="let not of notifications">
+    <ion-row>
+      <ion-col>
+        <span>{{not.description.msj}}</span>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button>
+          Ok
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+</ion-item-group>
+<ion-item-group *ngIf="!isLoading">
+  <ion-item-divider color="light">Antiguas</ion-item-divider>
+    <ion-item *ngFor="let not of notificationsViejas">
+      <ion-row>
+        <ion-col>
+          <span>{{not.description.msj}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+</ion-item-group>

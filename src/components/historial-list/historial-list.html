@@ -1,29 +1,31 @@
+<div *ngFor="let consult of list">
 
-<ion-card *ngFor="let consult of list">
-
-    <ion-item>
-      <h2>{{consult.case_medical}} - {{consult.updatedAt | date: 'dd/MM/yyyy'}}</h2>
-      <p>{{consult.specialty}}</p>
+  <div *ngFor="let speciality of consult.speciality">
+<div padding class="contenedors">
+    <span class="favoritos">{{speciality.name}}</span>
+  </div>
+<ion-card *ngFor="let caso of speciality.case_medical">
+  <ion-item-group>
+      <ion-item-divider color="light">{{caso.name}}</ion-item-divider>
+  </ion-item-group>
+    <ion-item *ngFor="let consult of caso.consultation">
+      <h2>{{consult.doctor}} - {{consult.date_consultation}}</h2>
+      <ion-row>
+          <ion-col>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-start clear small (click)="verDetalle(consult, caso.name, speciality.name)">
+              <div>Ver más</div>
+            </button>
+          </ion-col>
+        </ion-row>
     </ion-item>
+
   
-    <!-- <img src="img/advance-card-bttf.png"> -->
-  
-    <ion-card-content>
-      <p>
-        {{consult.doctor}}
-      </p>
-    </ion-card-content>
-  
-    <ion-row>
-      <ion-col>
-      </ion-col>
-      <ion-col>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-start clear small (click)="verDetalle(consult)">
-          <div>Ver más</div>
-        </button>
-      </ion-col>
-    </ion-row>
+    
   
   </ion-card>
+</div>
+</div>
