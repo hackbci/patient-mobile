@@ -26,4 +26,8 @@ export class PatientProvider {
 
   }
 
+  save(perfil) {
+    return this.http.put(this.base + '/' + perfil.id, perfil);
+  }
+
 }

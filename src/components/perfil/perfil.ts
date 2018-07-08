@@ -46,12 +46,25 @@ export class PerfilComponent implements OnChanges {
       },
     err => {
       console.error(err);
+      this.loading.hideLoading();
+        this.isLoading = false;
     });
 
   }
 
   edit() {
+    this.loading.showLoading();
     console.log('guardar perfil');
+    this.patientProvider.save(this.perfil)
+    .subscribe(data => {
+      console.log('saveProfile', data);
+      this.perfil = data;
+        this.loading.hideLoading();
+        this.isLoading = false;
+    }, err => {
+      this.loading.hideLoading();
+        this.isLoading = false;
+    });
   }
 
 }

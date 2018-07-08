@@ -24,11 +24,7 @@ export class AntecedentesPage {
   }
 
   toggleEdit() {
-    if(this.editing === true) {
-      this.editing = false;
-    } else {
-      this.editing = true;
-    }
+    this.editing = !this.editing;
   }
 
 
