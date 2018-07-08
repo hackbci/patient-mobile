@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PatientProvider } from '../../providers/patient/patient';
 import { LoadingProvider } from '../../providers/loading/loading';
 
@@ -16,14 +16,11 @@ export class AntecedentesComponent {
 
   perfil: any;
   isLoading = true;
+  @Input() editing;
 
   constructor(private patientProvider: PatientProvider,
   private loading: LoadingProvider) {
     console.log('Hello PerfilComponent Component');
-    this.getProfile();
-  }
-
-  ionViewWillEnter() {
     this.getProfile();
   }
 
@@ -33,6 +30,16 @@ export class AntecedentesComponent {
     this.perfil = this.patientProvider.getPerfil();
     this.loading.hideLoading();
     this.isLoading = false;
+  }
+
+  ngOnChanges(changes) {
+    if(changes['editing'] && changes['editing'].currentValue === false && !changes['editing'].firstChange) {
+      this.edit();
+    }
+  }
+
+  edit() {
+    console.log('guardar perfil');
   }
 
 }

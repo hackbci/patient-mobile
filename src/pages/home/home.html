@@ -5,5 +5,13 @@
 </ion-header>
 
 <ion-content padding>
-  <perfil></perfil>
+    <ion-fab bottom right>
+        <button ion-fab (click)="toggleEdit()">
+          <ion-icon md *ngIf="!editing" name="create">
+          </ion-icon>
+          <ion-icon md *ngIf="editing" name="cloud-done">
+            </ion-icon>
+        </button>
+      </ion-fab>
+  <perfil [editing]="editing"></perfil>
 </ion-content>

@@ -15,11 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AntecedentesPage {
 
+  editing = false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AntecedentesPage');
   }
+
+  toggleEdit() {
+    if(this.editing === true) {
+      this.editing = false;
+    } else {
+      this.editing = true;
+    }
+  }
+
 
 }

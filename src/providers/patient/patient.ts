@@ -27,7 +27,7 @@ export class PatientProvider {
       "birthdate": "07/07/2018", //
       // "age": "12", // calcular al enviar
       "sex": "Masculino", //
-      // "type_identification": "RUT",
+      "type_identification": "RUT", //
       "number_identification": "123123123123", //
       "nacionality": "Chileno", //
       "forecast": "asdasdasd",

@@ -7,8 +7,17 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  editing = false;
   constructor(public navCtrl: NavController) {
 
+  }
+
+  toggleEdit() {
+    if(this.editing === true) {
+      this.editing = false;
+    } else {
+      this.editing = true;
+    }
   }
 
 }

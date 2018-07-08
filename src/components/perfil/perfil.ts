@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 import { PatientProvider } from '../../providers/patient/patient';
 import { LoadingProvider } from '../../providers/loading/loading';
 
@@ -12,11 +12,11 @@ import { LoadingProvider } from '../../providers/loading/loading';
   selector: 'perfil',
   templateUrl: 'perfil.html'
 })
-export class PerfilComponent {
+export class PerfilComponent implements OnChanges {
 
   perfil: any;
   isLoading = true;
-  editing = false;
+  @Input() editing;
 
   constructor(private patientProvider: PatientProvider,
   private loading: LoadingProvider) {
@@ -28,21 +28,18 @@ export class PerfilComponent {
     this.getProfile();
   }
 
+  ngOnChanges(changes) {
+    if(changes['editing'] && changes['editing'].currentValue === false && !changes['editing'].firstChange) {
+      this.edit();
+    }
+  }
+
   getProfile() {
     this.loading.showLoading();
     console.log('getProfile', this.patientProvider.getPerfil());
     this.perfil = this.patientProvider.getPerfil();
     this.loading.hideLoading();
     this.isLoading = false;
-  }
-
-  toggleEdit() {
-    if(this.editing === true) {
-      this.editing = false;
-      this.edit();
-    } else {
-      this.editing = true;
-    }
   }
 
   edit() {
