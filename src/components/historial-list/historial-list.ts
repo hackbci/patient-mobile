@@ -3,6 +3,7 @@ import { ConsultProvider } from '../../providers/consult/consult';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { NavController } from 'ionic-angular';
 import { HistorialDetailPage } from '../../pages/historial-detail/historial-detail';
+import { rut } from '../../app/enviroment-globals';
 
 /**
  * Generated class for the HistorialListComponent component.
@@ -29,7 +30,7 @@ export class HistorialListComponent {
 
   loadAll() {
     this.loading.showLoading();
-    this.consultProvider.getConsult('123123123123')
+    this.consultProvider.getConsult(rut)
     .subscribe(data => {
       console.log('getConsult', data);
       this.list = [];

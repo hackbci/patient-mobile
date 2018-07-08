@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { PatientProvider } from '../../providers/patient/patient';
 import { LoadingProvider } from '../../providers/loading/loading';
+import { rut } from '../../app/enviroment-globals';
 
 /**
  * Generated class for the AntecedentesComponent component.
@@ -27,7 +28,7 @@ export class AntecedentesComponent {
 
   getProfile() {
     this.loading.showLoading();
-    this.patientProvider.getPerfil('123123123123', 'RUT')
+    this.patientProvider.getPerfil(rut, 'RUT')
       .subscribe(data => {
         console.log('getProfile', data);
         this.perfil = data[0];
