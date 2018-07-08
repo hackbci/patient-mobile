@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { AntecedentesPage } from './antecedentes';
+import { HistorialPage } from './historial';
 import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [
-    AntecedentesPage,
+    HistorialPage,
   ],
   imports: [
-    IonicPageModule.forChild(AntecedentesPage),
+    IonicPageModule.forChild(HistorialPage),
     ComponentsModule
   ],
   exports: [
-    AntecedentesPage
+    HistorialPage
   ]
 })
-export class AntecedentesPageModule {}
+export class HistorialPageModule {}

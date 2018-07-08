@@ -4,10 +4,12 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { AntecedentesComponent } from './antecedentes/antecedentes';
+import { HistorialListComponent } from './historial-list/historial-list';
 @NgModule({
 	declarations: [
 		PerfilComponent,
-		AntecedentesComponent
+		AntecedentesComponent,
+    HistorialListComponent
 	],
 	imports: [
 		IonicModule,
@@ -16,7 +18,8 @@ import { AntecedentesComponent } from './antecedentes/antecedentes';
 	providers: [HttpClient],
 	exports: [
 		PerfilComponent,
-		AntecedentesComponent
+		AntecedentesComponent,
+    HistorialListComponent
 	]
 })
 export class ComponentsModule { }

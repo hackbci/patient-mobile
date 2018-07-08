@@ -15,7 +15,6 @@
   </ion-item>
   <ion-item>
       <ion-label>Tipo de identificación</ion-label>
-      <!-- <ion-input class="text-input" [readonly]="!editing" type="text" [(ngModel)]="perfil.type_identification"></ion-input> -->
       <ion-select disabled="{{!editing}}" [(ngModel)]="perfil.type_identification">
           <ion-option value="RUT">Rut</ion-option>
           <ion-option value="pasaporte">Pasaporte</ion-option>
@@ -68,7 +67,6 @@
   </ion-item>
   <ion-item>
     <ion-label >Tipo de residencia</ion-label>
-    <!-- <ion-input class="text-input" [readonly]="!editing" type="text" [(ngModel)]="perfil.type_housing"></ion-input> -->
     <ion-select disabled="{{!editing}}" [(ngModel)]="perfil.type_housing">
         <ion-option value="casa">Casa</ion-option>
         <ion-option value="departamento">Departamento</ion-option>

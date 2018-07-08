@@ -19,7 +19,7 @@ export class PerfilComponent implements OnChanges {
   @Input() editing;
 
   constructor(private patientProvider: PatientProvider,
-  private loading: LoadingProvider) {
+    private loading: LoadingProvider) {
     console.log('Hello PerfilComponent Component');
     this.getProfile();
   }
@@ -29,17 +29,25 @@ export class PerfilComponent implements OnChanges {
   }
 
   ngOnChanges(changes) {
-    if(changes['editing'] && changes['editing'].currentValue === false && !changes['editing'].firstChange) {
+    if (changes['editing'] && changes['editing'].currentValue === false && !changes['editing'].firstChange) {
       this.edit();
     }
   }
 
   getProfile() {
     this.loading.showLoading();
-    console.log('getProfile', this.patientProvider.getPerfil());
-    this.perfil = this.patientProvider.getPerfil();
-    this.loading.hideLoading();
-    this.isLoading = false;
+    // console.log('getProfile', this.patientProvider.getPerfil());
+    this.patientProvider.getPerfil('123123123123', 'RUT')
+      .subscribe(data => {
+        console.log('getProfile', data);
+        this.perfil = data[0];
+        this.loading.hideLoading();
+        this.isLoading = false;
+      },
+    err => {
+      console.error(err);
+    });
+
   }
 
   edit() {

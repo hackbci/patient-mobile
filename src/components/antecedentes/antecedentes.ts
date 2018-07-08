@@ -14,9 +14,10 @@ import { LoadingProvider } from '../../providers/loading/loading';
 })
 export class AntecedentesComponent {
 
+  @Input() editing;
   perfil: any;
   isLoading = true;
-  @Input() editing;
+  
 
   constructor(private patientProvider: PatientProvider,
   private loading: LoadingProvider) {
@@ -26,10 +27,16 @@ export class AntecedentesComponent {
 
   getProfile() {
     this.loading.showLoading();
-    console.log('getProfile', this.patientProvider.getPerfil());
-    this.perfil = this.patientProvider.getPerfil();
-    this.loading.hideLoading();
-    this.isLoading = false;
+    this.patientProvider.getPerfil('123123123123', 'RUT')
+      .subscribe(data => {
+        console.log('getProfile', data);
+        this.perfil = data[0];
+        this.loading.hideLoading();
+        this.isLoading = false;
+      },
+    err => {
+      console.error(err);
+    });
   }
 
   ngOnChanges(changes) {

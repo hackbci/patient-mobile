@@ -16,21 +16,28 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingProvider } from '../providers/loading/loading';
 import { AntecedentesPage } from '../pages/antecedentes/antecedentes';
+import { ConsultProvider } from '../providers/consult/consult';
+import { HistorialPage } from '../pages/historial/historial';
+import { AntecedentesPageModule } from '../pages/antecedentes/antecedentes.module';
+import { HistorialPageModule } from '../pages/historial/historial.module';
+import { HistorialDetailPageModule } from '../pages/historial-detail/historial-detail.module';
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
-    AntecedentesPage
+    TabsPage
   ],
   imports: [
     HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,
-    HttpClientModule
+    HttpClientModule,
+    AntecedentesPageModule,
+    HistorialPageModule,
+    HistorialDetailPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,15 +45,15 @@ import { AntecedentesPage } from '../pages/antecedentes/antecedentes';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
-    AntecedentesPage
+    TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PatientProvider,
-    LoadingProvider
+    LoadingProvider,
+    ConsultProvider
   ]
 })
 export class AppModule {}

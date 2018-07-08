@@ -1,0 +1,62 @@
+<!--
+  Generated template for the HistorialDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalle de historial</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <h2>{{consulta.case_medical}} - {{consulta.updatedAt | date: 'dd/MM/yyyy'}}</h2>
+    <p>{{consulta.specialty}}</p>
+  </ion-item>
+  <ion-item>
+      <label>Sintomas:</label>
+      
+      <ion-row>
+          <ion-col>
+              <ion-badge *ngFor="let pat of consulta.symptom" item-end>{{pat}}</ion-badge>
+          </ion-col>
+        </ion-row>
+    </ion-item>
+  <ion-item>
+      <label>Enfermedad:</label>
+      <ion-row>
+        <ion-col padding>
+            <ion-badge *ngFor="let pat of consulta.patology">{{pat}}</ion-badge>
+        </ion-col>
+      </ion-row>
+      
+    </ion-item>
+
+    <ion-item-group *ngIf="!isLoading">
+        <ion-item-divider color="light">Examenes realizados</ion-item-divider>
+        <ion-item *ngFor="let exam of consulta.exams">
+          <ion-label >{{exam}}</ion-label>
+          <!-- <ion-input class="text-input" [readonly]="!editing" type="text" value="" [(ngModel)]="perfil.telephone"></ion-input> -->
+        </ion-item>
+      </ion-item-group>
+
+  <ion-item-group *ngIf="!isLoading">
+      <ion-item-divider color="light">Medicamentos recetados</ion-item-divider>
+      <ion-item *ngFor="let med of consulta.medication">
+        <ion-label >{{med.name}}</ion-label>
+        <!-- <ion-input class="text-input" [readonly]="!editing" type="text" value="" [(ngModel)]="perfil.telephone"></ion-input> -->
+      </ion-item>
+    </ion-item-group>
+
+    <ion-item>
+        <ion-label>Indicaciones</ion-label>
+        <ion-textarea [readonly]="true" [(ngModel)]="consulta.indications"></ion-textarea>
+      </ion-item>
+  
+
+</ion-content>

@@ -1,1 +1,1 @@
-export const baseUrl = 'http://100.0.0.0/';
+export const baseUrl = 'https://api-nanofunction.azurewebsites.net/';
